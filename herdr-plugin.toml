@@ -1,0 +1,10 @@
+id = "codergeek121.herdr-rails"
+name = "Herdr Rails"
+version = "0.1.0"
+min_herdr_version = "0.7.0"
+description = "Simplify Rails development with Herdr"
+platforms = ["linux", "macos"]
+
+[[events]]
+on = "worktree.created"
+command = ["sh", "bin/db_prepare.sh"]

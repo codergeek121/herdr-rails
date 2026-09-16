@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -eu
+
 WORKTREE_PATH=$(echo "$HERDR_PLUGIN_EVENT_JSON" | jq -r '.data.worktree.path')
 cd "$WORKTREE_PATH"
 

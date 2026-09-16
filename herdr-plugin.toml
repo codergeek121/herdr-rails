@@ -8,3 +8,7 @@ platforms = ["linux", "macos"]
 [[events]]
 on = "worktree.created"
 command = ["sh", "bin/db_prepare.sh"]
+
+[[events]]
+on = "worktree.created"
+command = ["sh", "bin/javascript_install.sh"]

@@ -40,3 +40,4 @@ test:
 
 * TODO: Handle multiple test DBs without app configuration change
 * TODO: Failure should mark the pane as "blocked"
+* TODO: Copy Bootsnap Cache for worktrees

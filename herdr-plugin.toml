@@ -12,3 +12,7 @@ command = ["sh", "bin/db_prepare.sh"]
 [[events]]
 on = "worktree.created"
 command = ["sh", "bin/javascript_install.sh"]
+
+[[events]]
+on = "worktree.created"
+command = ["sh", "bin/css_install.sh"]

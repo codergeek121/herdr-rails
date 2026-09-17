@@ -16,8 +16,7 @@ don't need any changes to this plugin — Herdr already exposes a per-worktree
 identity via the `HERDR_WORKSPACE_ID` environment variable, which is available
 throughout the worktree.
 
-Opt in from your app by referencing that variable in `config/database.yml`
-(it's evaluated as ERB):
+Opt in from your app by referencing that variable in `config/database.yml`:
 
 ```yaml
 development:
@@ -35,6 +34,18 @@ test:
   worktree its own database.
 * The existing `rails db:prepare` step creates the namespaced database
   automatically — it just reads `database.yml`, so no extra setup is required.
+
+## Manual dev layout action
+
+Herdr doesn't auto-bind plugin actions, so add this to `~/.config/herdr/config.toml` and run `herdr server reload-config`:
+
+```toml
+[[keys.command]]
+key = "prefix+alt+d" # example keybind
+type = "plugin_action"
+command = "codergeek121.herdr-rails.dev-layout"
+description = "Dev-Layout: Editor + Rails + Terminal"
+```
 
 ## TODOs
 

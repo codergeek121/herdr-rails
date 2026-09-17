@@ -1,6 +1,6 @@
 id = "codergeek121.herdr-rails"
 name = "Herdr Rails"
-version = "0.2.0"
+version = "0.3.0"
 min_herdr_version = "0.7.0"
 description = "Simplify Rails development with Herdr"
 platforms = ["linux", "macos"]
@@ -16,3 +16,9 @@ command = ["sh", "bin/javascript_install.sh"]
 [[events]]
 on = "worktree.created"
 command = ["sh", "bin/css_install.sh"]
+
+[[actions]]
+id = "dev-layout"
+title = "Dev-Layout: Editor + Rails + Terminal"
+contexts = ["workspace", "tab", "pane"]
+command = ["sh", "bin/railsdev_layout.sh"]

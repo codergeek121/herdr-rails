@@ -8,6 +8,14 @@ Simplifies worktree based agentic Rails development with Herdr.
 * Runs `rails css:install` for new worktrees if cssbundling-rails is present
 * Runs `rails javascript:install` for new worktrees if jsbundling-rails is present
 
+## Installation
+
+To install run:
+
+```
+herdr plugin install codergeek121/herdr-rails
+```
+
 ## Separate databases per worktree
 
 By default all worktrees share the same database. If you want each worktree to

@@ -2,11 +2,9 @@
 
 set -eu
 
-WORKTREE_PATH=$(echo "$HERDR_PLUGIN_EVENT_JSON" | jq -r '.data.worktree.path')
-cd "$WORKTREE_PATH"
+. "$(dirname "$0")/../lib/common.sh"
 
-[ -f Gemfile ] && grep -q rails Gemfile || exit 0
+cd_to_worktree
+is_rails || exit 0
 
-if bundle list --name-only 2>/dev/null | grep -q '^jsbundling-rails$'; then
-  bundle exec rails javascript:install
-fi
+has_gem "jsbundling-rails" && bundle exec rails javascript:install

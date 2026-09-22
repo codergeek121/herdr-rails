@@ -2,9 +2,9 @@
 
 set -eu
 
-WORKTREE_PATH=$(echo "$HERDR_PLUGIN_EVENT_JSON" | jq -r '.data.worktree.path')
-cd "$WORKTREE_PATH"
+. "$(dirname "$0")/../lib/common.sh"
 
-[ -f Gemfile ] && grep -q rails Gemfile || exit 0
+cd_to_worktree
+is_rails || exit 0
 
 bundle exec rails db:prepare

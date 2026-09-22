@@ -7,4 +7,5 @@ set -eu
 cd_to_worktree
 is_rails || exit 0
 
+bundle check || bundle install
 bundle exec rails db:prepare
